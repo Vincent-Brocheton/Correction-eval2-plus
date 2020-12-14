@@ -6,8 +6,13 @@ form.addEventListener("submit", e => {
     let number = Number(document.getElementById("numb").value);
     e.preventDefault();
     let fact = 1;
-    for(let i=1; i<=number; i++){
-        fact = fact*i;
+    if (number === 0) {
+        fact = 1;
+    } else {
+        number = Math.abs(number);
+        for (let i = 1; i <= number; i++) {
+            fact = fact * i;
+        }
     }
-    result.innerHTML = "La factorielle de "+ number+ " est " + fact;
+    result.innerHTML = "La factorielle de " + number + " est " + fact;
 })
